@@ -4,6 +4,7 @@ import json
 from datetime import datetime as dt
 import requests
 import re
+from art import tprint
 
 HEADERS = {
     'User-Agent':'Mozilla/5.0 (X11; Linux x86_64; rv:133.0) Gecko/20100101 Firefox/133.0',
@@ -74,7 +75,9 @@ class WbReview:
         return root_id
 
 if __name__ == "__main__":    
-    """ input start """    
+    """ input start """
+    tprint('.: wb-reviews :.', font='cybermedium', sep='\n')
+
     url = input("Enter url's: ")
     wb = WbReview(string=url)
     data_reviews = wb.get_review()
